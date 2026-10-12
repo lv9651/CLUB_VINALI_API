@@ -21,6 +21,7 @@
         public bool Activo { get; set; }
         public bool PuedeCanjear { get; set; }
         public decimal PuntosDisponibles { get; set; }
+        public int Tipoproducto { get; set; }
     }
 
     public class HistorialCompleto

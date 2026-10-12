@@ -58,7 +58,7 @@ namespace SISLAB_API.Areas.Maestros.Services
             mensaje.IsBodyHtml = false;
 
             using var smtp = new SmtpClient("smtp.gmail.com", 587); // host y puerto SMTP
-            smtp.Credentials = new NetworkCredential("consultoriovinali@gmail.com", "nltv jzxl gdad isia");
+            smtp.Credentials = new NetworkCredential("consultoriovinali@gmail.com", "hlkx lchc mysh kcev");
             smtp.EnableSsl = true;
             await smtp.SendMailAsync(mensaje);
         }

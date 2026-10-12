@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http.Features;
-using SISLAB_API.Areas.Maestros.Services;
-
 using Microsoft.Data.SqlClient;
+using SISLAB_API.Areas.Maestros.Repositories;
+using SISLAB_API.Areas.Maestros.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +24,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        policy => policy.WithOrigins("http://localhost:3001", "https://intranet.qf.com.pe")
+        policy => policy.WithOrigins("http://localhost:3001", "https://vinaliclub.vinali.pe")
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials());
@@ -35,6 +35,8 @@ builder.Services.AddScoped<UsuarioRepositorio>();
 builder.Services.AddScoped<UsuarioServicio>();
 builder.Services.AddScoped<PuntajeRepositorio>();
 builder.Services.AddScoped<PuntajeServicio>();
+builder.Services.AddScoped<ClubVinaliRepository>();
+builder.Services.AddScoped<ClubVinaliService>();
 
 var app = builder.Build();
 

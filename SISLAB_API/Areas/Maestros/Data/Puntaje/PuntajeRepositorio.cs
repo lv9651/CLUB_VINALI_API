@@ -53,10 +53,10 @@ public class PuntajeRepositorio
         return resultados;
     }
 
-    public async Task<List<ProductoCanjeable>> ObtenerProductosCanjeables(int? idUsuario)
+    public async Task<List<ProductoCanjeable    >> ObtenerProductosCanjeables(int? idUsuario)
     {
         var resultados = new List<ProductoCanjeable>();
-
+            
         using (var connection = new SqlConnection(_connectionString))
         {
             await connection.OpenAsync();
@@ -78,10 +78,12 @@ public class PuntajeRepositorio
                             Codigo = reader.GetInt32(0),
                             Servicio = reader.GetString(1),
                             Puntaje = reader.GetDecimal(2),
+                      
                             FechaCreacion = reader.GetDateTime(3),
                             Activo = reader.GetBoolean(4),
                             PuedeCanjear = Convert.ToBoolean(reader.GetInt32(5)),
-                            PuntosDisponibles = reader.GetDecimal(6)
+                            PuntosDisponibles = reader.GetDecimal(6),
+                            Tipoproducto = reader.GetInt32(7),
                         });
                     }
                 }
